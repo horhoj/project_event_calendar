@@ -1,2 +1,12 @@
 .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.monthSwitchWrap {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

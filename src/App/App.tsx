@@ -1,11 +1,15 @@
 import React from 'react';
 import { Router } from '../router';
 import styles from './App.module.scss';
+import { Spinner } from './Spinner';
 
 export const App: React.FC = () => {
   return (
-    <div className={styles.wrap}>
-      <Router />
-    </div>
+    <>
+      <Spinner />
+      <div className={styles.wrap}>
+        <Router />
+      </div>
+    </>
   );
 };

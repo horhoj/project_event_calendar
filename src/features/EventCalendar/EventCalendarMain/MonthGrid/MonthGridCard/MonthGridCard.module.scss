@@ -1,0 +1,97 @@
+.monthCard {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 120px;
+  max-height: 300px;
+
+  &IsToday {
+    background-color: lightblue;
+  }
+
+
+  &Title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &NotDateOfMonth {
+    filter: opacity(.3);
+  }
+
+  &EventList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #666;
+      border-radius: 20px;
+      border: 1px solid #fff;
+    }
+
+    &Item {
+      background-color: #eee;
+      padding: 5px;
+      font-size: 90%;
+      position: relative;
+      border-radius: 5px;
+
+      &Title {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 80%;
+      }
+
+      &DeleteButton {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #990000;
+        color: wheat;
+        border: none;
+        font-weight: bold;
+
+
+      }
+
+      &EditButton {
+        position: absolute;
+        right: 30px;
+        top: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007700;
+        color: wheat;
+        border: none;
+        font-weight: bold;
+
+      }
+    }
+  }
+}
+

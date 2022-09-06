@@ -1,0 +1,50 @@
+.wrap {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 5px;
+}
+
+.navBtn {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: darkslategray;
+  color: #eeeeee;
+  font-weight: bold;
+
+}
+
+.monthCaption {
+  display: flex;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.calendar {
+  position: relative;
+
+  &Input {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+
+  &Button {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: darkslategray;
+    color: #eeeeee;
+    font-weight: bold;
+  }
+
+}

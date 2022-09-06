@@ -1,0 +1,96 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 400px;
+}
+
+.error {
+  color: red;
+  font-size: 80%;
+}
+
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &Label {
+    display: flex;
+  }
+
+  &Input {
+    padding: 10px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &Label {
+    display: flex;
+  }
+
+  &TextArea {
+    padding: 10px;
+    resize: vertical;
+    min-height: 100px;
+  }
+}
+
+.buttonList {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+  &Button {
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+
+  }
+}
+
+.dateTimeBlock {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+  &Date {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    &Label {
+      display: flex;
+    }
+
+    &Input {
+      padding: 10px;
+      height: 40px;
+
+    }
+  }
+
+  &Time {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+
+    &Label {
+      display: flex;
+    }
+
+    &Input {
+      padding: 10px;
+      height: 40px;
+    }
+  }
+}
+
