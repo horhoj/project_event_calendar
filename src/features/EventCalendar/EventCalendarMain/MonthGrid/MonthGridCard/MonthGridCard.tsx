@@ -2,6 +2,8 @@ import { FC } from 'react';
 import classNames from 'classnames';
 import { endOfDay, startOfDay, startOfToday } from 'date-fns';
 import { EventList } from '../../../../../api/events/types';
+import { Button } from '../../../../../UIKit/Button';
+import { getTime } from '../../../helpers';
 import styles from './MonthGridCard.module.scss';
 
 interface MonthGridCardProps {
@@ -49,27 +51,25 @@ export const MonthGridCard: FC<MonthGridCardProps> = ({
         <div>{dateOfMonth}</div>
         <div>{dayOfWeek}</div>
       </div>
-      <ul className={styles.monthCardEventList}>
+      <ul className={classNames(styles.monthCardEventList, 'g-scroll-bar')}>
         {filteredEventList.map((eventItem) => (
           <li key={eventItem.id} className={styles.monthCardEventListItem}>
-            <div>
-              {new Date(eventItem.unixDate).toLocaleTimeString().slice(0, 5)}:{' '}
-            </div>
+            <div>{getTime(eventItem.unixDate)}</div>
             <div className={styles.monthCardEventListItemTitle}>
               {eventItem.title}
             </div>
-            <button
+            <Button
               className={styles.monthCardEventListItemDeleteButton}
               onClick={() => onDelete(eventItem.id)}
             >
               X
-            </button>
-            <button
+            </Button>
+            <Button
               className={styles.monthCardEventListItemEditButton}
               onClick={() => onEdit(eventItem.id)}
             >
               E
-            </button>
+            </Button>
           </li>
         ))}
       </ul>

@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { ModalWindow } from '../../../UIKit/ModalWindow';
-import { AddEventForm } from '../AddEventForm';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { eventCalendarSlice } from '../eventCalendarSlice';
-import { PatchEventForm } from '../PatchEventForm';
+import { Button } from '../../../UIKit/Button';
+import { PatchEventForm } from './PatchEventForm';
+import { AddEventForm } from './AddEventForm';
 import styles from './EventCalendarMain.module.scss';
 import { MonthSwitch } from './MonthSwitch';
 import { MonthGrid } from './MonthGrid';
-import { AddButton } from './AddButton';
 
 export const EventCalendarMain: FC = () => {
   eventCalendarSlice.hooks.useEventCalendarMain();
@@ -26,6 +26,14 @@ export const EventCalendarMain: FC = () => {
     );
   };
 
+  const handleAddEvent = () => {
+    dispatch(
+      eventCalendarSlice.actions.setEventFormShowMode({
+        eventFormShowMode: 'new',
+      }),
+    );
+  };
+
   return (
     <>
       <ModalWindow
@@ -34,12 +42,12 @@ export const EventCalendarMain: FC = () => {
         }
         handleModalClose={handleCloseModal}
       >
-        {eventFormShowMode === 'new' && <AddEventForm />}
+        {eventFormShowMode !== 'edit' && <AddEventForm />}
         {eventFormShowMode === 'edit' && <PatchEventForm />}
       </ModalWindow>
       <div className={styles.wrap}>
         <div className={styles.monthSwitchWrap}>
-          <AddButton />
+          <Button onClick={handleAddEvent}>Add</Button>
           <MonthSwitch />
         </div>
         <div>

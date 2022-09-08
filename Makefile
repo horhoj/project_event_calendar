@@ -21,7 +21,7 @@ console:
 	docker-compose exec --user $(shell id -u):$(shell id -g)  node sh -c "/bin/bash"
 
 dev:
-	docker-compose exec --user $(shell id -u):$(shell id -g)  node sh -c "export PORT=3000 && yarn start --host=0.0.0.0"
+	docker-compose exec --user $(shell id -u):$(shell id -g)  node sh -c "export PORT=3002 && yarn start --host=0.0.0.0"
 
 ddev: docker-up install dev
 

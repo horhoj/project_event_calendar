@@ -29,19 +29,6 @@
     gap: 3px;
     overflow: auto;
 
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: #fff;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #666;
-      border-radius: 20px;
-      border: 1px solid #fff;
-    }
 
     &Item {
       background-color: #eee;
@@ -54,41 +41,23 @@
         max-width: 200px;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 80%;
+        width: calc(100% - 45px);
       }
 
       &DeleteButton {
-        position: absolute;
-        right: 8px;
-        top: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #990000;
-        color: wheat;
-        border: none;
-        font-weight: bold;
-
-
+        position: absolute !important;
+        right: 8px !important;
+        top: 8px !important;
+        padding: 5px !important;
+        background-color: #990000 !important;
       }
 
       &EditButton {
-        position: absolute;
-        right: 30px;
-        top: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #007700;
-        color: wheat;
-        border: none;
-        font-weight: bold;
+        position: absolute !important;
+        right: 30px !important;
+        top: 8px !important;
+        padding: 5px !important;
+        background-color: #007700 !important;
 
       }
     }

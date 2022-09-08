@@ -4,19 +4,8 @@
   justify-content: center;
   align-items: center;
   width: fit-content;
-  padding: 5px;
 }
 
-.navBtn {
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  background-color: darkslategray;
-  color: #eeeeee;
-  font-weight: bold;
-
-}
 
 .monthCaption {
   display: flex;
@@ -37,14 +26,5 @@
     left: 0;
   }
 
-  &Button {
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    background-color: darkslategray;
-    color: #eeeeee;
-    font-weight: bold;
-  }
 
 }

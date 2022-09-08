@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { useAppDispatch } from '../../../store/hooks';
-import { eventCalendarSlice } from '../eventCalendarSlice';
-import { EventItemData } from '../../../api/events/types';
-import { EventEditForm } from '../EventEditForm';
-import { EventEditData } from '../EventEditForm/types';
-import { getDate, getTime } from '../helpers';
+import { useAppDispatch } from '../../../../store/hooks';
+import { eventCalendarSlice } from '../../eventCalendarSlice';
+import { EventItemData } from '../../../../api/events/types';
+import { EventForm } from '../EventForm';
+import { EventEditData } from '../EventForm/types';
+import { getDate, getTime } from '../../helpers';
 
 const currentDateTime = new Date().getTime();
 
@@ -37,7 +37,7 @@ export const AddEventForm: FC = () => {
   };
 
   return (
-    <EventEditForm
+    <EventForm
       initialValues={NEW_EVENT_INITIAL_STATE}
       onCancel={handleCancel}
       onSubmit={handleSubmit}

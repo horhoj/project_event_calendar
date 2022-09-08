@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addMonths } from 'date-fns';
 import { eventCalendarSlice } from '../../eventCalendarSlice';
 import { useAppSelector } from '../../../../store/hooks';
+import { Button } from '../../../../UIKit/Button';
 import styles from './MonthSwitch.module.scss';
 
 export const MonthSwitch: FC = () => {
@@ -15,7 +16,6 @@ export const MonthSwitch: FC = () => {
   );
 
   const handlePrev = () => {
-    // dispatch(eventCalendarSlice.actions.subtractMonthFromSelectedDate());
     const newSelectedDate = addMonths(selectedDate, -1).getTime();
     dispatch(
       eventCalendarSlice.thunks.fetchEventListThunk({
@@ -25,7 +25,6 @@ export const MonthSwitch: FC = () => {
   };
 
   const handleNext = () => {
-    // dispatch(eventCalendarSlice.actions.addMonthToSelectedDate());
     const newSelectedDate = addMonths(selectedDate, 1).getTime();
     dispatch(
       eventCalendarSlice.thunks.fetchEventListThunk({
@@ -51,18 +50,16 @@ export const MonthSwitch: FC = () => {
 
   return (
     <div className={styles.wrap}>
-      <button className={styles.navBtn} onClick={handlePrev}>{`<`}</button>
+      <Button onClick={handlePrev}>{`<`}</Button>
       <div className={styles.monthCaption}>
         {new Date(selectedDate).toLocaleString('default', {
           month: 'long',
         })}{' '}
         {new Date(selectedDate).getFullYear()}
       </div>
-      <button className={styles.navBtn} onClick={handleNext}>{`>`}</button>
+      <Button onClick={handleNext}>{`>`}</Button>
       <div className={styles.calendar}>
-        <button onClick={handleShowCalendar} className={styles.calendarButton}>
-          calendar
-        </button>
+        <Button onClick={handleShowCalendar}>calendar</Button>
         <input
           type="date"
           tabIndex={-1}

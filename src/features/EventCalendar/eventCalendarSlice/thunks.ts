@@ -16,14 +16,17 @@ export const fetchEventListThunk = createAsyncThunk(
   async ({ selectedDate }: FetchEventListPayload, { dispatch }) => {
     const datesOfSelectedInterval =
       getDatesOfSelectedIntervalHelper(selectedDate);
-    dispatch(actions.setSelectedDate({ selectedDate }));
-    dispatch(actions.setDatesOfSelectedInterval({ datesOfSelectedInterval }));
+
     const startDate = datesOfSelectedInterval[0];
     const endDate = datesOfSelectedInterval[datesOfSelectedInterval.length - 1];
     if (startDate && endDate) {
       const startTime = startOfDay(startDate).getTime();
       const endTime = endOfDay(endDate).getTime();
-      return api.events.fetchEventList(startTime, endTime);
+      const eventList = await api.events.fetchEventList(startTime, endTime);
+      dispatch(actions.setSelectedDate({ selectedDate }));
+      dispatch(actions.setDatesOfSelectedInterval({ datesOfSelectedInterval }));
+
+      return eventList;
     }
   },
 );

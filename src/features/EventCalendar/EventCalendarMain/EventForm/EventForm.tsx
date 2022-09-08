@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import styles from './EventEditForm.module.scss';
+import { Button } from '../../../../UIKit/Button';
+import { Input } from '../../../../UIKit/Input';
+import styles from './EventForm.module.scss';
 import { EventEditData } from './types';
 
 interface EventEditFormProps {
@@ -17,7 +19,7 @@ const validationSchema = yup.object({
   time: yup.string().required('Must be time!!!'),
 });
 
-export const EventEditForm: FC<EventEditFormProps> = ({
+export const EventForm: FC<EventEditFormProps> = ({
   initialValues,
   onCancel,
   onSubmit,
@@ -40,7 +42,7 @@ export const EventEditForm: FC<EventEditFormProps> = ({
     >
       <div className={styles.title}>
         <label className={styles.titleLabel}>Title</label>
-        <input
+        <Input
           className={styles.titleInput}
           type="text"
           placeholder={'please input title'}
@@ -68,7 +70,7 @@ export const EventEditForm: FC<EventEditFormProps> = ({
       <div className={styles.dateTimeBlock}>
         <div className={styles.dateTimeBlockDate}>
           <label>Date</label>
-          <input
+          <Input
             type="date"
             className={styles.dateTimeBlockDateInput}
             {...formik.getFieldProps('date')}
@@ -79,7 +81,7 @@ export const EventEditForm: FC<EventEditFormProps> = ({
         </div>
         <div className={styles.dateTimeBlockTime}>
           <label className={styles.dateTimeBlockTimeLabel}>Time</label>
-          <input
+          <Input
             type="time"
             className={styles.dateTimeBlockTimeInput}
             {...formik.getFieldProps('time')}
@@ -91,16 +93,16 @@ export const EventEditForm: FC<EventEditFormProps> = ({
       </div>
 
       <div className={styles.buttonList}>
-        <button className={styles.buttonListButton} type={'submit'}>
+        <Button className={styles.buttonListButton} type={'submit'}>
           save
-        </button>
-        <button
+        </Button>
+        <Button
           className={styles.buttonListButton}
           type={'button'}
           onClick={onCancel}
         >
           cancel
-        </button>
+        </Button>
       </div>
     </form>
   );

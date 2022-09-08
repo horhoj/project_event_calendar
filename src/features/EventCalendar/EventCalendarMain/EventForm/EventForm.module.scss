@@ -21,7 +21,7 @@
   }
 
   &Input {
-    padding: 10px;
+
   }
 }
 
@@ -38,6 +38,7 @@
     padding: 10px;
     resize: vertical;
     min-height: 100px;
+    border-radius: 5px;
   }
 }
 
@@ -47,10 +48,7 @@
   width: 100%;
 
   &Button {
-    padding: 10px;
-    cursor: pointer;
     width: 100%;
-
   }
 }
 

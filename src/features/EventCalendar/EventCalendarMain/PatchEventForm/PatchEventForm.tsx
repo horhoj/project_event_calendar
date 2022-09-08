@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { eventCalendarSlice } from '../eventCalendarSlice';
-import { EventEditData } from '../EventEditForm/types';
-import { getDate, getTime } from '../helpers';
-import { EventEditForm } from '../EventEditForm';
-import { EventItemData } from '../../../api/events/types';
+import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
+import { eventCalendarSlice } from '../../eventCalendarSlice';
+import { EventEditData } from '../EventForm/types';
+import { getDate, getTime } from '../../helpers';
+import { EventForm } from '../EventForm';
+import { EventItemData } from '../../../../api/events/types';
 
 export const PatchEventForm: FC = () => {
   const editEventRequest = useAppSelector(
@@ -48,7 +48,7 @@ export const PatchEventForm: FC = () => {
   };
 
   return (
-    <EventEditForm
+    <EventForm
       initialValues={initialValues}
       onCancel={handleCancel}
       onSubmit={handleSubmit}

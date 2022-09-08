@@ -28,3 +28,20 @@ body {
 .g-overflow-hidden {
   overflow: hidden;
 }
+
+.g-scroll-bar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 20px;
+    border: 1px solid #fff;
+  }
+}

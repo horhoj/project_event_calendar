@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import classNames from 'classnames';
 import { eventCalendarSlice } from '../../eventCalendarSlice';
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
 import styles from './MonthGrid.module.scss';
@@ -30,17 +31,19 @@ export const MonthGrid: FC = () => {
   };
 
   return (
-    <div className={styles.wrap}>
-      {datesOfSelectedInterval.map((unixDate) => (
-        <MonthGridCard
-          key={unixDate}
-          unixDate={unixDate}
-          selectedDate={selectedDate}
-          eventList={fetchEventListRequest.data}
-          onDelete={handleDeleteEventItem}
-          onEdit={handleEditEventItem}
-        />
-      ))}
+    <div className={classNames(styles.wrap, 'g-scroll-bar')}>
+      <div className={styles.monthGrid}>
+        {datesOfSelectedInterval.map((unixDate) => (
+          <MonthGridCard
+            key={unixDate}
+            unixDate={unixDate}
+            selectedDate={selectedDate}
+            eventList={fetchEventListRequest.data}
+            onDelete={handleDeleteEventItem}
+            onEdit={handleEditEventItem}
+          />
+        ))}
+      </div>
     </div>
   );
 };
