@@ -4,6 +4,7 @@ import { addMonths } from 'date-fns';
 import { eventCalendarSlice } from '../../eventCalendarSlice';
 import { useAppSelector } from '../../../../store/hooks';
 import { Button } from '../../../../UIKit/Button';
+import { getDate } from '../../helpers';
 import styles from './MonthSwitch.module.scss';
 
 export const MonthSwitch: FC = () => {
@@ -66,6 +67,7 @@ export const MonthSwitch: FC = () => {
           ref={inputDateRef}
           className={styles.calendarInput}
           onChange={handleChangeCalendarDate}
+          value={getDate(selectedDate)}
         />
       </div>
     </div>
