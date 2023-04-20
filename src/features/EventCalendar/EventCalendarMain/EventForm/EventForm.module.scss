@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: 20px;
   min-width: 400px;
+
+  @media (max-width: 500px) {
+    min-width: 250px;
+  }
 }
 
 .error {
@@ -56,6 +60,10 @@
   display: flex;
   gap: 10px;
   width: 100%;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 
   &Date {
     display: flex;
